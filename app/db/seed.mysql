@@ -1,0 +1,8 @@
+-- seed file for burger_db, used for testing burger app
+-- John Webster
+
+INSERT INTO burger (burger_name)
+VALUES ("Big n juicy"),
+        ( "MacDonalds reject");
+
+-- note devoured has default value of false so does not need to be specified
