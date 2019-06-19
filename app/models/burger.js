@@ -5,7 +5,7 @@ const orm = require("../config/orm.js");
 const burger = {
     getAllBurgers: () => {
         return new Promise( (resolve, reject) => {
-            selectAll("burger")
+            orm.selectAll("burger")
             .then((res) => {
                 resolve(res);
             })
@@ -16,7 +16,7 @@ const burger = {
     },
     insertBurger: (name) => {
         return new Promise( (resolve, reject) => {
-            insertOne("burger","burger_name", "name", false)
+            orm.insertOne("burger","burger_name", name, false)
                 .then((res) => {
                     resolve(res);
                 })
@@ -27,7 +27,7 @@ const burger = {
     },
     devour: (name) => {
         return new Promise((resolve, reject) => {
-        upDateOne("burger", "devoured", name, true)
+        orm.upDateOne("burger", "devoured", name, true)
             .then((res) => {
                 resolve(res);
             })
@@ -40,4 +40,22 @@ const burger = {
 
 }
 
-module.exports.burger = burger;
+// test code
+console.log(burger);
+
+// burger.getAllBurgers()
+// .then ( (res) => {
+//     console.log(res);
+//     return burger.insertBurger("Crabby Patty");
+// })
+// .then ( (res) => {
+//     console.log(res);
+// });
+
+// burger.insertBurger("Crabby Patty");
+// burger.getAllBurgers();
+// burger.devour("Crabby Patty");
+// burger.getAllBurgers();
+
+
+module.export = burger;
