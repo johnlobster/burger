@@ -8,6 +8,11 @@
 
 #mainBox {
     /* background-color: lightslategrey; */
+    background-color: transparent;
+
+}
+
+#rowBox {
     background-color: orange;
 
 }
@@ -24,7 +29,8 @@
     padding: 0.2rem;
     padding-left:0.4rem;
     border-color: darkslateblue;
-    border-width: 0.3rem;
-    border-style: outset;
+    border-width: 0.25rem;
+    border-style: solid;
+    border-radius: 0.5rem;
 
 }
