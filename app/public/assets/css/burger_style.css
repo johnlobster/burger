@@ -6,6 +6,25 @@
     letter-spacing: 0.3rem;
 }
 
-body {
-    background-color: lightslategrey;
+#mainBox {
+    /* background-color: lightslategrey; */
+    background-color: orange;
+
+}
+
+#bodyBox {
+    background-color: red;
+}
+
+/* display box for a burger item */
+.aBurger {
+    width: 100%;
+    background-color: darkorange;
+    color: black;
+    padding: 0.2rem;
+    padding-left:0.4rem;
+    border-color: darkslateblue;
+    border-width: 0.3rem;
+    border-style: outset;
+
 }
