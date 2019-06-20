@@ -8,7 +8,7 @@ const connection = require("./connection.js");
 const orm= {
         selectAll:  (tableName) => {
             return new Promise((resolve, reject) => {
-                var queryString = "SELECT * FROM ?? ";
+                let queryString = "SELECT * FROM ?? ";
                 connection.query(queryString, [tableName],(err, res) => {
                     if (err) reject(err);
                     resolve(res);
@@ -29,11 +29,11 @@ const orm= {
                 });
             }
         )},
-        // set the column name to true
-        upDateOne: (tableName, cols, burgerName, devoured) => {
+        // set the column name to true and return all burger data
+        upDateOne: (tableName, cols, whereName, setBoolean) => {
             return new Promise((resolve, reject) => {
-                var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
-                connection.query(queryString, [tableName, cols[1], devoured, cols[0], burgerName], (err, res) => {
+                let queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
+                connection.query(queryString, [tableName, cols[1], setBoolean, cols[0], whereName], (err, res) => {
                     if (err) reject(err);
                     resolve(res);
                 });

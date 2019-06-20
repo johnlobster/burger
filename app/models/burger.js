@@ -16,7 +16,7 @@ const burger = {
     },
     insertBurger: (name) => {
         return new Promise( (resolve, reject) => {
-            orm.insertOne("burger","burger_name", name, false)
+            orm.insertOne("burger", ["burger_name", "devoured"], name, false)
                 .then((res) => {
                     resolve(res);
                 })
@@ -27,8 +27,9 @@ const burger = {
     },
     devour: (name) => {
         return new Promise((resolve, reject) => {
-        orm.upDateOne("burger", "devoured", name, true)
+        orm.upDateOne("burger", ["burger_name","devoured"], name, true)
             .then((res) => {
+                // console.log("Inside burger.js name= " + name);
                 resolve(res);
             })
             .catch((err) => {
@@ -41,7 +42,7 @@ const burger = {
 }
 
 // test code
-console.log(burger);
+// console.log(burger);
 
 // burger.getAllBurgers()
 // .then ( (res) => {
@@ -58,4 +59,4 @@ console.log(burger);
 // burger.getAllBurgers();
 
 
-module.export = burger;
+module.exports = burger;

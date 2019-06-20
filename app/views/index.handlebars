@@ -1,0 +1,55 @@
+<!-- replaces "body" in main.handlebars -->
+<main class="container container-flex">
+    <div class="row">
+        <!-- mobile first so form input is on top for mobile -->
+        <div class="col-xs-12 order-xs-1 col-md-4 order-md-2">
+            <h4>Try a new burger</h4>
+            <form>
+                <div class="form-group">
+                    <label for="nameInput">Burger name</label>
+                    <input type="text" id="nameInput" class="form-control" placeholder="Enter burger name">
+                </div>
+                <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+        <div class="col-xs-12 order-xs-2 col-md-4 order-md-1">
+            <h4>Burgers I want to eat</h4>
+            {{#each burger}}
+                <div class="row">
+
+                    {{#unless devoured}}
+                    <div class="col-12 col-sm-6">
+                        <p> {{{burger_name}}}</p>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <button class="devourMe btn btn-sm btn-primary" data-val="{{{burger_name}}}">
+                            DEVOUR
+                        </button>
+                    </div>
+                    {{/unless}}
+
+                    
+                </div>
+            {{/each}}
+        </div>
+        
+        <div class="col-xs-12 order-3 col-md-4">
+            <h4>Burgers I ate</h4>
+            {{#each burger}}
+            <div class="row">
+                {{#if devoured}}
+                <p> {{{burger_name}}}</p>
+                {{/if}}
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+
+</main>
+<!--
+{{#if sleepy}}
+{{> cats/cat-block sleep=false}}
+{{/if}}
+-->

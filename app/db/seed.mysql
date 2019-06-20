@@ -1,8 +1,14 @@
 -- seed file for burger_db, used for testing burger app
 -- John Webster
+USE burger_db;
+-- clear the table
+DELETE FROM burger;
 
+-- put in some sample data
 INSERT INTO burger (burger_name)
 VALUES ("Big n juicy"),
         ( "MacDonalds reject");
 
 -- note devoured has default value of false so does not need to be specified
+
+SELECT * FROM burger;
