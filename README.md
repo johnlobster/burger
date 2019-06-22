@@ -23,9 +23,13 @@ Note - heroku apps are paused if not in use, will take 10-15 seconds for it to r
 
 #### Running locally
 
-clone the master repo, cd to friendFinder directory
+clone the master repo, cd to burger directory
 
 `npm install` will install all the node modules
+
+create a `.env` file (not tracked by git) and add the following
+
+`MYSQL_PASSWORD=<your password to mysql server for user "root">`
 
 `node server` will start the server
 
