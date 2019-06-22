@@ -2,12 +2,11 @@
 
 #title {
     font-family: 'Carter One', cursive;
-    font-size: 48pt;
+    font-size: 4rem;
     letter-spacing: 0.3rem;
 }
 
 #mainBox {
-    /* background-color: lightslategrey; */
     background-color: transparent;
 
 }
