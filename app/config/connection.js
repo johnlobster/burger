@@ -1,12 +1,12 @@
 mysql = require("mysql");
-require("dotenv").config();
 
 
 // connect to the database
 if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL);
 }
-else {}
+else {
+    require("dotenv").config();
     connection = mysql.createConnection({
         host: "localhost",
 
@@ -19,7 +19,8 @@ else {}
         // Your password
         password: String(process.env.MYSQL_PASSWORD),
         database: "burger_db"
-});
+    });
+}
 
 connection.connect((err) => {
     if (err) throw err;
