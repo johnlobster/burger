@@ -14,7 +14,7 @@ Stores burgers you want to eat and burgers you have eaten in a mysql database. U
 
 #### Deployed
 
-<https://guarded-scrubland-84294.herokuapp.com/>
+<https://still-refuge-63688.herokuapp.com/>
 
 Note - heroku apps are paused if not in use, will take 10-15 seconds for it to restart
 
